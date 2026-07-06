@@ -1,0 +1,137 @@
+# Read the documentation before extending the defaults:
+# https://docs.searxng.org/admin/settings/
+
+use_default_settings: true
+
+server:
+  image_proxy: true
+  method: POST
+  public_instance: false
+  limiter: false
+
+general:
+  instance_name: "Calcifer Web Search"
+  debug: true
+
+search:
+  default_lang: "en"
+  languages:
+    - "en"
+  safe_search: 0
+  autocomplete: ""
+  formats:
+    - html
+    - json
+
+ui:
+  default_theme: material
+
+categories_as_tabs:
+  general:
+  news:
+  it:
+  science:
+
+# Note: The following requested engines have no SearXNG implementation:
+#   - DuckDuckGo News (DuckDuckGo is a single general-purpose engine)
+#   - Hugging Face Data Sets (no separate engine for datasets)
+#   - Free Software Directory (no SearXNG engine exists)
+
+# ── Engines ──────────────────────────────────────────────────────────────────
+# disabled: false  → visible and enabled by default
+# inactive: false  → available in preferences (true = hidden entirely)
+
+engines:
+  # ── General Search ──────────────────────────────────────────────────────
+  - name: DuckDuckGo
+    engine: duckduckgo
+    shortcut: ddg
+    disabled: false
+
+  - name: Google
+    engine: google
+    shortcut: g
+    disabled: false
+
+  # ── News ────────────────────────────────────────────────────────────────
+  - name: Google News
+    engine: google_news
+    shortcut: gnews
+    categories: news
+    disabled: false
+
+  # ── Reference ───────────────────────────────────────────────────────────
+  - name: Wikipedia
+    engine: wikipedia
+    shortcut: wp
+    categories: science
+    disabled: false
+
+  # ── Science ─────────────────────────────────────────────────────────────
+  - name: arXiv
+    engine: arxiv
+    shortcut: arxiv
+    categories: science
+    disabled: false
+
+  - name: CrossRef
+    engine: crossref
+    categories: science
+    disabled: false
+
+  # ── Code & Dev ──────────────────────────────────────────────────────────
+  - name: GitHub
+    engine: github
+    shortcut: gh
+    categories: it
+    disabled: false
+
+  - name: NPM
+    engine: npm
+    categories: it
+    disabled: false
+
+  - name: Docker Hub
+    engine: docker_hub
+    categories: it
+    disabled: false
+
+  - name: Stack Overflow
+    engine: stackexchange
+    shortcut: so
+    categories: it
+    disabled: false
+
+  - name: Hugging Face
+    engine: huggingface
+    categories: it
+    disabled: false
+
+  - name: Arch Linux Wiki
+    engine: archlinux
+    shortcut: al
+    categories: it
+    disabled: false
+
+  - name: Microsoft Learn
+    engine: microsoft_learn
+    categories: it
+    disabled: false
+
+  - name: National Vulnerability Database
+    engine: nvd
+    categories: it
+    disabled: false
+
+  # ── Community ───────────────────────────────────────────────────────────
+  - name: Hacker News
+    engine: hackernews
+    shortcut: hn
+    categories: general
+    disabled: false
+
+  - name: Reddit
+    engine: reddit
+    shortcut: rd
+    categories: general
+    disabled: false
