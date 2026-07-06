@@ -1,0 +1,5 @@
+# Secrets
+.env
+
+# Cloned repos
+mcp-searxng/
